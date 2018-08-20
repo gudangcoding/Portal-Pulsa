@@ -11,7 +11,7 @@ Installation
 
 # pada folder project anda, download libray ini memnggunakan cmd dengan mengetikkan perinah berikut :
 ```
-    composer require azioarv/portalpulsa
+    composer require lpknaura/portalpulsa
 ```
 #setelah berhasil terdownload mengunakan composer maka setting lagi penggunaannya pada folder config
 Tambahkan KOde berikut pada file config/app.php
