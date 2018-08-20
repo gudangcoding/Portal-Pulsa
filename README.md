@@ -1,55 +1,58 @@
-Portal Pulsa API
+Cara Penggunaan API portal Pulsa Menggunakan LARAVEL VERSI 5
 
 
 ----------
 
 
 Package for Laravel 5
+untuk petunjuk api bisa dikunjungi website dari portal pulsa di bawah ini
 [Official Documentation](http://portalpulsa.com/api-transaksi-pulsa-murah/)
 Installation
 
+# pada folder project anda, download libray ini memnggunakan cmd dengan mengetikkan perinah berikut :
 ```
     composer require azioarv/portalpulsa
 ```
-   
-Add the following code to config/app.php
-Provider
+#setelah berhasil terdownload mengunakan composer maka setting lagi penggunaannya pada folder config
+Tambahkan KOde berikut pada file config/app.php
+
+Pada Provider tambahkan kode berikut di baris akhir
 ```php
 AzioArv\PortalPulsa\PortalPulsaServiceProvider::class
 ```
-Aliases
+//untuk Aliases tambahkan kode berikut
+
 ```php
 'Pulsa' => AzioArv\PortalPulsa\PortalPulsaFacade::class
 ```
-Run This Command
+Jalankan perintah dibawah ini untuk menyelesaikan konfigurasi
 
     php artisan vendor publish
     
-Configuration
+setting id key dan secret yang anda dapat dari member anda di portal pulsa
 .env
 
-    PULSA_ID=<your_id>
-    PULSA_KEY=<your_key>
-    PULSA_SECRET=<your_secret>
+    PULSA_ID=id kamu
+    PULSA_KEY=keykamu
+    PULSA_SECRET=secretkamu
 
-Usage
-Check Saldo
+untuk  Check Saldo
 ```php
 Pulsa::saldo();
 ```
-Check Price Product
+Check harga Produk
 ```php
 Pulsa::cekHarga($productCode);
 ```
-Check Status
+Check Status transaksi
 ```php
 Pulsa::status($transcationID);
 ```
-Process Transcation
+Proses pembelian pulsa
 ```php
 Pulsa::prosesPulsa($productCode,$phoneNumber,$transactionID);
 ```
-Process PLN Transcation
+Proses pembelian PLN
 ```php
 Pulsa::prosesPLN($productCode,$phoneNumber,$plnNumber,$transactionID);
 ```
